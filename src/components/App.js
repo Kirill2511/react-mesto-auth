@@ -6,7 +6,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import ImagePopup from './ImagePopup';
-import { api } from '../utils/Api';
+import { api } from '../utils/api';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import EditAvatarPopup from './EditAvatarPopup';
 import EditProfilePopup from './EditProfilePopup';
@@ -39,7 +39,7 @@ function App() {
   const [message, setMessage] = React.useState('');
   const history = useHistory();
 
-  React.useEffect(() => {
+  function tokenCheck() {
     const token = localStorage.getItem('token');
     if (token) {
       auth
@@ -56,7 +56,11 @@ function App() {
           if (error === 401) console.log('Токен не корректен');
         });
     }
-  });
+  }
+
+  React.useEffect(() => {
+    tokenCheck();
+  }, []);
 
   function onRegister(email, password) {
     auth
