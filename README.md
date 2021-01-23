@@ -12,8 +12,8 @@
 
 1. git clone https://github.com/Kirill2511/react-mesto-auth.git
 2. cd react-mesto-auth
-3. yarn
+3. npm install
 
 ## Запуск проекта
-yarn run start
+npm start
  
