@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ModalWithForm(props) {
+function PopupWithForm(props) {
   return (
     <div
       className={`popup popup__${props.name} ${
@@ -29,4 +29,4 @@ function ModalWithForm(props) {
   );
 }
 
-export default ModalWithForm;
+export default PopupWithForm;
