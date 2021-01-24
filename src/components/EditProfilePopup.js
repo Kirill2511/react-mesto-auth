@@ -1,7 +1,7 @@
 import React from 'react';
 import CurrentUserContext from '../contexts/CurrentUserContext';
-import PopupWithForm from './FormWithPopup';
-import HandlerSubmit from './HandlerSubmit';
+import PopupWithForm from './PopupWithForm';
+import SubmitButton from './SubmitButton';
 
 function EditProfilePopup(props) {
   const [name, setName] = React.useState('');
@@ -69,7 +69,7 @@ function EditProfilePopup(props) {
         <span className="popup__input-error" id="activity-input-error" />;
       </label>
 
-      <HandlerSubmit button="Сохранить" onClick={props.isLoading} />
+      <SubmitButton button="Сохранить" onClick={props.isLoading} />
     </PopupWithForm>
   );
 }

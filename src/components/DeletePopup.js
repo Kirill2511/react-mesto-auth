@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupWithForm from './FormWithPopup';
+import PopupWithForm from './PopupWithForm';
 
 function DeletePopup(props) {
   function handleSubmit(e) {

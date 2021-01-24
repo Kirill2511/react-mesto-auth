@@ -164,7 +164,7 @@ function App() {
       document.removeEventListener('keydown', handlerEscClose);
       document.removeEventListener('click', closeByOverlay);
     };
-  });
+  }, []);
 
   React.useEffect(() => {
     Promise.all([api.getInitialCards(), api.getUserInfo()])

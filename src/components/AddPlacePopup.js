@@ -1,6 +1,6 @@
 import React from 'react';
-import PopupWithForm from './FormWithPopup';
-import HandlerSubmit from './HandlerSubmit';
+import PopupWithForm from './PopupWithForm';
+import SubmitButton from './SubmitButton';
 
 function AddPlacePopup(props) {
   const [name, setNameCard] = React.useState('');
@@ -57,7 +57,7 @@ function AddPlacePopup(props) {
         />
         <span className="popup__input-error" id="link-input-error" />
       </label>
-      <HandlerSubmit button="Создать" onClick={props.isLoading} />
+      <SubmitButton button="Создать" onClick={props.isLoading} />
     </PopupWithForm>
   );
 }

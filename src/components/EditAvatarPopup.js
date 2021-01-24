@@ -1,6 +1,6 @@
 import React from 'react';
-import PopupWithForm from './FormWithPopup';
-import HandlerSubmit from './HandlerSubmit';
+import PopupWithForm from './PopupWithForm';
+import SubmitButton from './SubmitButton';
 
 function EditAvatarPopup(props) {
   const changeAvatar = React.useRef('');
@@ -33,7 +33,7 @@ function EditAvatarPopup(props) {
         <span className="popup__input-error" id="link-avatar-error" />
       </label>
 
-      <HandlerSubmit button="Сохранить" onClick={props.isLoading} />
+      <SubmitButton button="Сохранить" onClick={props.isLoading} />
     </PopupWithForm>
   );
 }
