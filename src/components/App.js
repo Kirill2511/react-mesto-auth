@@ -40,7 +40,7 @@ function App() {
   const history = useHistory();
 
   function tokenCheck() {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
     if (token) {
       auth
         .checkToken(token)
