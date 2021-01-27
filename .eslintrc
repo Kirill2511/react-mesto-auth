@@ -12,7 +12,8 @@
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "no-shadow": "off",
-    "class-methods-use-this": ["error", { "exceptMethods": ["_getResponseData"] }]
+    "class-methods-use-this": ["error", { "exceptMethods": ["_getResponseData"] }],
+    "quote-props": "off"
   },
   "plugins": [
     "prettier",
