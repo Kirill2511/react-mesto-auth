@@ -40,7 +40,7 @@ function EditProfilePopup(props) {
     >
       <label className="popup__label">
         <input
-          value={name}
+          value={name || 'Жак-Ив Кусто'}
           onChange={handleChangeName}
           className="popup__item popup__name"
           id="name"
@@ -55,7 +55,7 @@ function EditProfilePopup(props) {
       </label>
       <label className="popup__label">
         <input
-          value={description}
+          value={description || 'Исследователь океана'}
           onChange={handleChangeDescription}
           className="popup__item popup__about"
           id="about"
