@@ -11,7 +11,7 @@ function Header({ loggingIn, userEmail, onSignOut }) {
           <Route exact path="/">
             <p className="header__email">{userEmail}</p>
             <Link
-              to="/singin"
+              to="/signin"
               className="header__button-logout"
               onClick={onSignOut}
             >
@@ -19,13 +19,13 @@ function Header({ loggingIn, userEmail, onSignOut }) {
             </Link>
           </Route>
         )}
-        <Route path="/singin">
+        <Route path="/signin">
           <Link to="/signup" className="header__link">
             Регистрация
           </Link>
         </Route>
         <Route path="/signup">
-          <Link to="/singin" className="header__link">
+          <Link to="/signin" className="header__link">
             Вход
           </Link>
         </Route>

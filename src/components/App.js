@@ -109,7 +109,7 @@ function App() {
     localStorage.removeItem('jwt');
     setLoggingIn(false);
     setEmail('');
-    history.push('/singin');
+    history.push('/signin');
   }
 
   function handleEditProfileClick() {
@@ -277,14 +277,14 @@ function App() {
               onCardDelete={handleDeleteClick}
             />
           </ProtectedRoute>
-          <Route path="/singin">
+          <Route path="/signin">
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/signup">
             <Register onRegister={onRegister} />
           </Route>
           <Route>
-            {loggingIn ? <Redirect to="/" /> : <Redirect to="/singin" />}
+            {loggingIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
           </Route>
         </Switch>
         {loggingIn && <Footer />}
