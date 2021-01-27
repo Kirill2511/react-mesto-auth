@@ -2,7 +2,7 @@ export const BASE_URL = 'https://api.kirill25111.students.nomoredomains.work/';
 
 const checkResponse = (res) => {
   if (res.ok) return res.json();
-  return Promise.reject(new Error(`Ошибка: ${res.status}`));
+  return Promise.reject(res.status);
 };
 
 export const register = (email, password) => fetch(`${BASE_URL}/signup`, {
