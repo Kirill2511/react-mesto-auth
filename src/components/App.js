@@ -277,7 +277,7 @@ function App() {
               onCardDelete={handleDeleteClick}
             />
           </ProtectedRoute>
-          <Route path="/singin">
+          <Route path="/signin">
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/signup">
