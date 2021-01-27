@@ -40,10 +40,10 @@ function EditProfilePopup(props) {
     >
       <label className="popup__label">
         <input
-          value={name || ''}
+          value={name}
           onChange={handleChangeName}
           className="popup__item popup__name"
-          id="name-input"
+          id="name"
           maxLength="40"
           minLength="2"
           name="name"
@@ -55,10 +55,10 @@ function EditProfilePopup(props) {
       </label>
       <label className="popup__label">
         <input
-          value={description || ''}
+          value={description}
           onChange={handleChangeDescription}
           className="popup__item popup__about"
-          id="activity-input"
+          id="about"
           maxLength="200"
           minLength="2"
           name="about"
