@@ -1,9 +1,9 @@
 import { BASE_URL } from './auth';
 
 export default class Api {
-  constructor({ baseUrl, headers }) {
-    this._baseUrl = baseUrl;
-    this._headers = headers;
+  constructor(config) {
+    this.url = config.url;
+    this.headers = config.headers;
   }
 
   _getResponseData(res) {
@@ -14,30 +14,30 @@ export default class Api {
   }
 
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
-      headers: this.getHeaders(),
+    return fetch(`${this.url}/cards`, {
+      headers: this.headers,
     }).then((res) => this._getResponseData(res));
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this.url}/users/me`, {
       method: 'GET',
-      headers: this.getHeaders(),
+      headers: this.headers,
     }).then((res) => this._getResponseData(res));
   }
 
   postNewCard(data) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return fetch(`${this.url}/cards`, {
       method: 'POST',
-      headers: this.getHeaders(),
+      headers: this.headers,
       body: JSON.stringify(data),
     }).then((res) => this._getResponseData(res));
   }
 
   setUserInfo(data) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this.url}/users/me`, {
       method: 'PATCH',
-      headers: this.getHeaders(),
+      headers: this.headers,
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -46,9 +46,9 @@ export default class Api {
   }
 
   setUserAvatar(data) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
+    return fetch(`${this.url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this.getHeaders(),
+      headers: this.headers,
       body: JSON.stringify({
         avatar: data.avatar,
       }),
@@ -56,39 +56,31 @@ export default class Api {
   }
 
   deleteCard(cardID) {
-    return fetch(`${this._baseUrl}/cards/${cardID}`, {
+    return fetch(`${this.url}/cards/${cardID}`, {
       method: 'DELETE',
-      headers: this.getHeaders(),
+      headers: this.headers,
     }).then((res) => this._getResponseData(res));
   }
 
   likeCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this.url}/cards/likes/${cardId}`, {
       method: 'PUT',
-      headers: this.getHeaders(),
+      headers: this.headers,
     }).then((res) => this._getResponseData(res));
   }
 
   dislikeCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+    return fetch(`${this.url}/cards/likes/${cardId}`, {
       method: 'DELETE',
-      headers: this.getHeaders(),
+      headers: this.headers,
     }).then((res) => this._getResponseData(res));
-  }
-
-  getHeaders() {
-    const token = localStorage.getItem('jwt');
-    return {
-      ...this._headers,
-      'Authorization': `Bearer ${token}`,
-    };
   }
 }
 
 export const api = new Api({
   url: BASE_URL,
   headers: {
-    'Accept': 'application/json',
+    'authorization': '4a48037a-5d1b-4b03-8646-b4d3a5383564',
     'Content-Type': 'application/json',
   },
 });
