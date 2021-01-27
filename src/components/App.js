@@ -284,7 +284,7 @@ function App() {
             <Register onRegister={onRegister} />
           </Route>
           <Route>
-            {loggingIn ? <Redirect to="/" /> : <Redirect to="/singin" />}
+            {loggingIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
           </Route>
         </Switch>
         {loggingIn && <Footer />}
