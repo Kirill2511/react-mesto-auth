@@ -277,14 +277,14 @@ function App() {
               onCardDelete={handleDeleteClick}
             />
           </ProtectedRoute>
-          <Route path="/signin">
+          <Route path="/singin">
             <Login onLogin={onLogin} />
           </Route>
           <Route path="/signup">
             <Register onRegister={onRegister} />
           </Route>
           <Route>
-            {loggingIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
+            {loggingIn ? <Redirect to="/" /> : <Redirect to="/singin" />}
           </Route>
         </Switch>
         {loggingIn && <Footer />}
