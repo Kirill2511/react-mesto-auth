@@ -25,7 +25,7 @@ function Header({ loggingIn, userEmail, onSignOut }) {
           </Link>
         </Route>
         <Route path="/signup">
-          <Link to="/signin" className="header__link">
+          <Link to="/singin" className="header__link">
             Вход
           </Link>
         </Route>

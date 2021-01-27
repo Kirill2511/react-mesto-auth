@@ -106,7 +106,7 @@ function App() {
   }
 
   function onSignOut() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
     setLoggingIn(false);
     setEmail('');
     history.push('/singin');
