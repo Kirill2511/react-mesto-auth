@@ -80,7 +80,7 @@ export default class Api {
 export const api = new Api({
   url: BASE_URL,
   headers: {
-    'authorization': '4a48037a-5d1b-4b03-8646-b4d3a5383564',
+    'Accept': 'application/json',
     'Content-Type': 'application/json',
   },
 });

@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.kirill25111.students.nomoredomains.work';
+export const BASE_URL = 'https://kirill25111.students.nomoredomains.work';
 
 const checkResponse = (res) => {
   if (res.ok) return res.json();
@@ -20,15 +20,7 @@ export const authorize = (email, password) => fetch(`${BASE_URL}/signin`, {
   },
   body: JSON.stringify({ email, password }),
 })
-  .then(checkResponse)
-  // eslint-disable-next-line consistent-return
-  .then((data) => {
-    if (data.token) {
-      localStorage.setItem('jwt', data.token);
-
-      return data.token;
-    }
-  });
+  .then(checkResponse);
 
 export const checkToken = (token) => fetch(`${BASE_URL}/users/me`, {
   method: 'GET',
